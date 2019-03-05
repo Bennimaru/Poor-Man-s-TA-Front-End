@@ -1,14 +1,24 @@
 .wrapper {
-    display: flex;
-    align-items: stretch;
+  display: flex;
+  align-items: stretch;
+}
+
+.navbar {
+  background-color: darkslategrey;
+}
+
+#navbar-title {
+  color: white;
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
+  min-width: 15%;
+  max-width: 15%;
+  min-height: 100vh;
+  background-color: darkslategrey;
+  color: white;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+  margin-left: -15%;
 }
