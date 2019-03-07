@@ -11,6 +11,7 @@ let counter
 const boroughURL = "http://localhost:3000/boroughs"
 const locationsURL = "http://localhost:3000/locations"
 const locationContainer = document.querySelector("#locationContainer")
+const singleLocation = document.querySelector('#singleLocation')
 const sidenav = document.querySelector('#sidebar-list')
 const backButton = document.querySelector("#back")
 const forwardButton = document.querySelector("#forward")
@@ -47,14 +48,41 @@ function renderLocations(locations){
   locations.forEach(function(location){
     const locationCard = document.createElement("div")
     const locationImage = document.createElement('img')
-    const locationName = document.createElement('p')
+    const locationName = document.createElement('h4')
     locationImage.className = "location-card"
     locationImage.src = location.image
+    locationImage.id = location.id
     locationName.className = "location-name"
     locationName.innerText = location.name
     locationCard.append(locationImage,locationName)
     locationContainer.append(locationCard)
   })
+}
+
+locationContainer.addEventListener("click",fetchSingleLocation)
+
+function fetchSingleLocation(event){
+  event.preventDefault()
+  singleLocation.innerHTML=''
+  const clickedLocation = event.target.id
+  return fetch(locationsURL+`/${clickedLocation}`)
+  .then(res => res.json())
+  .then(location => renderSingleLocation(location))
+}
+
+function renderSingleLocation(location){
+  const singleLocationCard = document.createElement("div")
+  const singleLocationImage = document.createElement("img")
+  const singleLocationName = document.createElement("p")
+  const singleLocationAddress = document.createElement("p")
+  const singleLocationDesc = document.createElement("p")
+  singleLocationImage.src = location.image
+  singleLocationName.innerText = location.name
+  singleLocationImage.className = "singleLocationImage"
+  singleLocationAddress.innerText = `Address: ${location.address}`
+  singleLocationDesc.innerText = `Description: ${location.description}`
+  singleLocationCard.append(singleLocationImage,singleLocationName,singleLocationAddress,singleLocationDesc)
+  singleLocation.append(singleLocationCard)
 }
 
 forwardButton.addEventListener("click",showNextFive)
