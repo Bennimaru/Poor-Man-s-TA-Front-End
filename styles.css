@@ -34,3 +34,7 @@
 #sidebar.active {
   margin-left: -15%;
 }
+
+.add-form {
+  /* display: none */
+}

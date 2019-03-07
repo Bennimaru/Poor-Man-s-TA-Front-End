@@ -44,8 +44,8 @@ function fetchLocations(event){
 }
 
 function renderLocations(locations){
+  const locationCard = document.createElement("div")
   locations.forEach(function(location){
-    const locationCard = document.createElement("div")
     const locationImage = document.createElement('img')
     const locationName = document.createElement('p')
     locationImage.className = "location-card"
@@ -75,4 +75,16 @@ function showLastFive(){
 //   fetch(`${locationsURL}/?_limit=5&_page=${counter}`)
 //     .then(res => res.json())
 //     .then(locations => locations.forEach(showLocation))
+}
+
+const toggleForm = document.querySelector('.toggleForm')
+toggleForm.addEventListener('click', displayForm)
+function displayForm(){
+  const addForm = document.querySelector('.add-form')
+  console.log(event)
+  if (addForm.style.display === "none"){
+    addForm.style.display = "block";
+  } else {
+    addForm.style.display = "none";
+  }
 }

@@ -25,6 +25,14 @@
               Poor Man's TripAdvisor
             </h4>
           </div>
+          <div class="col-auto">
+            <h3 id='navbar-title' class="toggleForm">
+              Add Place
+            </h3>
+          </div>
+        </div>
+        <div class="col-3">
+          </form>
         </div>
         <div class="col-3">
           <form action="#" class="navbar-form">
@@ -49,15 +57,23 @@
       </nav>
     <!-- Page Content -->
     <div class="container">
-      <div id="locationContainer" class="row">
-        <div class="col">
+      <form action="#" class="add-form">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Name">
+          <input type="text" class="form-control" placeholder="Address">
+          <input type="text" class="form-control" placeholder="Image">
         </div>
-      </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
       <div class="row">
         <div class="col">
           <button id="back"><=</button>
           <button id="forward">=></button>
           <p>Hello World</p>
+        </div>
+      </div>
+      <div id="locationContainer" class="row">
+        <div class="col">
         </div>
       </div>
     </div>
