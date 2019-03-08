@@ -1,5 +1,12 @@
 console.log("hi");
 
+document.addEventListener('DOMContentLoaded', login)
+
+function login(event){
+  const modal = document.querySelector('.modal')
+  modal.style.display = "block"
+}
+
 
 $(document).ready(function(){
   $('#sidebarCollapse').on('click', function () {
@@ -136,3 +143,21 @@ function createPlace(event){
     body: JSON.stringify(newData)
   })
 }
+
+let loginSubmit = document.querySelector('.login')
+loginSubmit.addEventListener('submit', (event) => {
+  newUser = {
+    name: event.target[0].value
+  }
+  fetch('http://localhost:3000/users', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(newUser)
+  })
+  event.preventDefault()
+  const modal = document.querySelector('.modal')
+  modal.style.display = "none"
+})
