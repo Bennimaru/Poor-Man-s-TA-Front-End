@@ -104,3 +104,35 @@ function showLastFive(){
 //     .then(res => res.json())
 //     .then(locations => locations.forEach(showLocation))
 }
+
+let addForm = document.querySelector('.add-form')
+addForm.addEventListener("submit", createPlace)
+let toggleForm = document.querySelector('.toggleForm')
+toggleForm.addEventListener('click', (event) => {
+  if (addForm.style.display === "none"){
+    addForm.style.display = "block";
+  } else {
+    addForm.style.display = "none";
+  }
+})
+
+function createPlace(event){
+  debugger
+  event.preventDefault()
+  console.log(event)
+  let newData = {
+    name: event.target[0].value,
+    address: event.target[1].value,
+    image: event.target[2].value,
+    description: event.target[3].value,
+    borough_id: event.target[4].value
+  }
+  fetch("http://localhost:3000/locations", {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(newData)
+  })
+}

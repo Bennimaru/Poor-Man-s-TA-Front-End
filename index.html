@@ -25,6 +25,10 @@
               Poor Man's TripAdvisor
             </h4>
           </div>
+          <div class="col-auto">
+            <h4 id='navbar-title' class="toggleForm">
+              Add Place
+            </h4>
         </div>
         <div class="col-3">
           <form action="#" class="navbar-form">
@@ -53,6 +57,21 @@
         <div id="singleLocation" class="col-6">
         </div>
         <div class="col-6">
+          <form action="#" class="add-form">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="Name">
+              <input type="text" name="address" class="form-control" placeholder="Address">
+              <input type="text" name="image" class="form-control" placeholder="Image">
+              <input type="text" name="description" class="form-control" placeholder="Description">
+              <select>
+                <option value="1">Bronx</option>
+                <option value="2">Brooklyn</option>
+                <option value="3">Manhattan</option>
+                <option value="4">Queens</option>
+                <option value="5">Staten Island</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
           <button id="back"><=</button>
           <button id="forward">=></button>
         </div>

@@ -11,6 +11,7 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
+  margin: 5px;
   width: 200px;
   height: 200px
 }
@@ -18,9 +19,12 @@
 .location-name {
   width: 200px
 }
-
+.singleLocation {
+  text-align: center
+}
 .singleLocationImage {
   max-width: 100%
+
 }
 
 #navbar-title {
@@ -37,4 +41,8 @@
 
 #sidebar.active {
   margin-left: -15%;
+}
+
+.add-form {
+  display: none;
 }
