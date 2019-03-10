@@ -110,7 +110,8 @@ function renderSingleLocation(location){
         <option value="5">Staten Island</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn" id="btn-edit">Submit</button>
+    <button type="submit" class="btn" id="btn-delete">Delete</button>
   </form>`
 }
 
@@ -161,9 +162,13 @@ function createPlace(event){
   })
 }
 
+// function pickAction(event){
+//
+// }
+
 function editLocationDetails(event){
   event.preventDefault()
-  let locationId = event.target[4].dataset.locationId
+  let locationId = parseInt(event.target[4].dataset.locationId)
   let editedData = {
     name: event.target[0].value,
     address: event.target[1].value,
